@@ -1,10 +1,9 @@
 /**
  * @name Powiadomienia
- * @author DIHO
  * @source https://github.com/DIHO1/notify/blob/main/plugin.js
- * @website https://github.com/DIHO1
  * @updateUrl https://raw.githubusercontent.com/DIHO1/notify/main/plugin.js
- * @version 1.1.3
+ * @website https://github.com/DIHO1/notify/blob/main/plugin.js
+ * @version 0.0.1
 */
 const request = require("request");
 const fs = require("fs");
@@ -12,24 +11,26 @@ const path = require("path");
 
 const config = {
     info: {
-        name: "Powiadomienie",
+        name: "Powiadomienia",
         authors: [
             {
                 name: "DIHO",
-                discord_id: "904418700399087626",
+                discord_id: "678556376640913408",
                 github_username: "DIHO1"
             }
         ],
-    version: "1.0.6",
+    github_raw:
+      "https://raw.githubusercontent.com/DIHO1/notify/main/plugin.js",
+    version: "0.0.3",
     description:
-      "Wyświetla powiadomienia takie jak nowe wiadomości, znajomi dodani Discord.",
+      "Powiadomienia.",
 	},
   changelog: [
     {
-      "title": "Poprawiono",
-      "type": "Fix",
+      "title": "Naprawiono",
+      "type": "fixed",
       "items": [
-        "Dodano ustawienia!."
+        "Naprawiono niedziałające błedy!.",
       ]
     }
   ],
@@ -67,56 +68,56 @@ const config = {
     },
     {
       type: "switch",
-      name: "W słowach kluczowych rozróżniana jest wielkość liter",
+      name: "keywords case sensitive",
       id: "case",
       value: false,
     },
     {
       type: "switch",
-      name: "Oznacz wiadomość jako przeczytaną podczas zamykania",
-      note: "Oznacza wiadomość jako przeczytaną, jeśli naciśniesz przycisk zamykania powiadomienia.",
+      name: "Mark message as read when closing",
+      note: "Marks the message as read if you press the close button on a notification.",
       id: "markAsRead",
       value: true,
     },
     {
       type: "switch",
-      name: "Wyświetl najwyższy kolor roli autora, jeśli jest dostępny",
-      note: "Ustawia kolor autora w powiadomieniu na najwyższy kolor roli.",
+      name: "Display author's highest role color if available",
+      note: "Sets the author's color in the notification to its highest role color.",
       id: "roleColor",
       value: false,
     },
     {
       type: "switch",
-      name: "Wyłącz, gdy okno nie jest skupione",
-      note: "Nie wysyłaj powiadomień , jeśli Discord nie jest skoncentrowany.",
+      name: "Disable when window is not focused",
+      note: "Do not push notifications if Discord is not focused.",
       id: "disableIfNoFocus",
       value: false,
     },
     {
       type: "switch",
-      name: "Wyłącz w trybie Nie przeszkadzać",
-      note: "Nie wysyłaj powiadomień, jeśli bieżący status użytkownika to Nie przeszkadzać.",
+      name: "Disable on Do Not Disturb",
+      note: "Do not push notifications if the current user status is Do Not Disturb.",
       id: "disableOnDnd",
       value: false,
     },
     {
       type: "switch",
-      name: "Wyłącz powiadomienia na DM",
-      note: "Nie wysyłaj powiadomień z czatów DM.",
+      name: "Disable DMs notifications",
+      note: "Do not push notifications from DM chats.",
       id: "ignoreDMs",
       value: false,
     },
     {
       type: "switch",
-      name: "Przyjaciel prosi o powiadomienia",
-      note: "Powiadomienia o zaakceptowanych zaproszeniach do znajomych.",
+      name: "Friend requests notifications",
+      note: "Push notifications for accepted friend requests.",
       id: "relationshipsNotis",
       value: true,
     },
     {
       type: "switch",
-      name: "Wyłącz powiadomienia o wiadomościach grupowych",
-      note: "Nie wypychaj powiadomień z grup czatu.",
+      name: "Disable Group DMs notifications",
+      note: "Do not push notifications from DM groups.",
       id: "ignoreDMGroups",
       value: false,
     },
