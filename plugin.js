@@ -1,9 +1,9 @@
 /**
  * @name Powiadomienia
  * @source https://github.com/DIHO1/notify/blob/main/plugin.js
- * @updateUrl https://raw.githubusercontent.com/DIHO1/notify/main/plugin.js
+ * @updateUrl https://raw.githubusercontent.com/DIHO1/Powiadomienia/main/plugin.js
  * @website https://github.com/DIHO1/notify/blob/main/plugin.js
- * @version 0.0.1
+ * @version 0.0.4
 */
 const request = require("request");
 const fs = require("fs");
@@ -20,17 +20,18 @@ const config = {
             }
         ],
     github_raw:
-      "https://raw.githubusercontent.com/DIHO1/notify/main/plugin.js",
-    version: "0.0.3",
+      "https://raw.githubusercontent.com/DIHO1/Powiadomienia/main/plugin.js",
+    version: "0.0.4",
     description:
       "Powiadomienia.",
 	},
   changelog: [
     {
-      "title": "Naprawiono",
-      "type": "fixed",
+      "title": "Update",
+      "type": "update",
       "items": [
-        "Naprawiono niedziałające błedy!.",
+        "Dodano nowy update!.",
+        "Dodano ustawienia",
       ]
     }
   ],
@@ -39,7 +40,7 @@ const config = {
       type: "slider",
       name: "Notification display time (seconds)",
       note: "Sets the amount of time for a notification to stay on-screen.",
-      min: 3,
+      min: 5,
       max: 25,
       id: "notiTime",
       value: 3,
